@@ -1,14 +1,12 @@
-try:
-    from pyb import SPI
-except ImportError:
-    from machine import SPI
+
+from machine import SPI
 
 
 SPI_DUMMY_INT = 0x00
 SPI_TRANSFER_LEN = 1
 SPI_HOLD_US = 50
 
-SPI_DEFAULT_BAUDRATE = 1000000  # 1MHz
+SPI_DEFAULT_BAUDRATE = 1000000 # 1MHz
 SPI_DEFAULT_FIRSTBIT = SPI.MSB
 SPI_DEFAULT_POLARITY = 0
 SPI_DEFAULT_PHASE = 0

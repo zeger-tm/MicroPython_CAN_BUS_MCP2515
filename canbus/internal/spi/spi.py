@@ -6,10 +6,8 @@ except ImportError:
 import sys
 import time
 
-try:
-    from pyb import Pin
-except ImportError:
-    from machine import Pin
+
+from machine import Pin
 
 from . import SPI_DEFAULT_BAUDRATE, SPI_DUMMY_INT, SPI_TRANSFER_LEN, SPI_HOLD_US
 
@@ -24,11 +22,11 @@ class SPI:
         raise NotImplementedError
 
     def start(self) -> None:
-        self._SPICS.value(0)
+        self._SPICS.off()
         time.sleep_us(SPI_HOLD_US)  # type: ignore
 
     def end(self) -> None:
-        self._SPICS.value(1)
+        self._SPICS.on()
         time.sleep_us(SPI_HOLD_US)  # type: ignore
 
     def transfer(self, value: int = SPI_DUMMY_INT, read: bool = False) -> Optional[int]:
