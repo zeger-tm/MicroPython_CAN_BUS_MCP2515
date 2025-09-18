@@ -68,10 +68,8 @@ from .can import (
     CANFrame,
 )
 
-try:
-    from pyb import Pin
-except ImportError:
-    from machine import Pin
+
+from machine import Pin
 
 
 TXBnREGS = collections.namedtuple("TXBnREGS", "CTRL SIDH DATA")
