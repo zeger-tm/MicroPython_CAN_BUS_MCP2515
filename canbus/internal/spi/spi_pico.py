@@ -6,7 +6,7 @@ from .spi import SPI
 
 SPI_SCK_PIN = "PB13"
 SPI_MOSI_PIN = "PB12"
-SPI_MISO_PIN = "PB13"
+SPI_MISO_PIN = "PB14"
 SPI_CS_PIN = "PB15"
 
 class SPIPICO(SPI):
